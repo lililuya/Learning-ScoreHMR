@@ -28,7 +28,7 @@
 - `denosing model`由3层`MLP`组成，在时间维度 $t$和特征维度 $s$上设置有一个`condition`
    - 输入包含姿势参数 $θ$时间步长 $t$和图像特征 $c$的噪声样本 $x_t$
    - 首先使用线性层投影 $x_t$到第一个特征维度上 $h^{(1)}$作为第一个`MLP`输入
-   - 然后对每个`MLP`块的输入特征通过`scaling`和`shifting`的方式得到 $h^{(i)}_{t}=t_sh^{(i)}+t_b$ $t_s$和 $t_b$是一个输出维度是 $2\times144$，计算公式 $(t_s,t_b)=MLP(\phi(t))$) 
+   - 然后对每个`MLP`块的输入特征通过`scaling`和`shifting`的方式得到 $h^{(i)}_{t}=t_sh^{(i)}+t_b$ $t_s$和 $t_b$是一个输出维度是 $2\times144$，计算公式 $(t_s,t_b)=MLP(\phi(t))) $
    - 每个`MLP`都会根据图像特征进行条件设置，方法是 $concate(h^{(i)}, c))$
 
 
